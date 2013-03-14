@@ -2,3 +2,10 @@ liked_content
 =============
 
 Display liked content for users and groups in elgg
+
+Group page for most liked content within the group
+- enable/disable as group option
+
+User page for most liked content and recently liked content
+
+Configurable widget to display liked content (AU widgets framework required)
