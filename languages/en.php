@@ -8,8 +8,8 @@ $english = array(
 	'liked_content:user:most_liked' => "Most liked content",
 	'liked_content:user:liked_content' => "Liked content",
 	'liked_content:liked_content' => "Liked content",
-	'liked_content:user:likes' => "%s's likes",
-	'liked_content:user:most_liked' => "Most liked",
+	'liked_content:user:likes' => "Liked by %s",
+	'liked_content:user:most_liked' => "Liked by Others",
 	
 	// Your Likes
 	'liked_content:widget:your_likes:title' => "Liked content",
