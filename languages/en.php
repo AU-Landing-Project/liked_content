@@ -10,6 +10,7 @@ $english = array(
 	'liked_content:liked_content' => "Liked content",
 	'liked_content:user:likes' => "Liked by %s",
 	'liked_content:user:most_liked' => "Liked by Others",
+	'liked_content:noresults' => "There is no liked content to display",
 	
 	// Your Likes
 	'liked_content:widget:your_likes:title' => "Liked content",

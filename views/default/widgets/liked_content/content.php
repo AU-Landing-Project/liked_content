@@ -30,4 +30,9 @@ if ($widget->eligo_sortby == 'mostliked') {
 $content = elgg_list_entities_from_annotations($options);
 
 
-echo $content;
+if ($content) {
+  echo $content;
+}
+else {
+  echo elgg_echo('liked_content:noresults');
+}

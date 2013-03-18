@@ -43,6 +43,9 @@ function liked_content_page_handler($page) {
 	  );
 	  
 	  $content = elgg_list_entities_from_annotations($options);
+	  if (!$content) {
+		$content = elgg_echo('liked_content:noresults');
+	  }
 	  
 	  $title = elgg_echo('liked_content:group:most_liked');
 	  
@@ -70,7 +73,7 @@ function liked_content_page_handler($page) {
 	  
 	  $options = array(
 		  'annotation_names' => array('likes'),
-		  'annotation_container_guids' => array($entity->guid),
+		  'annotation_owner_guids' => array($entity->guid),
 		  'order_by' => 'maxtime DESC',
 		  'full_view' => false,
 	  );
@@ -86,6 +89,9 @@ function liked_content_page_handler($page) {
 	  }
 	  
 	  $content = elgg_list_entities_from_annotations($options);
+	  if (!$content) {
+		$content = elgg_echo('liked_content:noresults');
+	  }
 	  
 	  $title = elgg_echo('liked_content:liked_content');
 	  
