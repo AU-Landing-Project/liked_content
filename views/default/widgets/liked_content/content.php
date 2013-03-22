@@ -1,13 +1,15 @@
 <?php
 
 $widget = $vars['entity'];
+liked_content_set_defaults($widget);
+
 $container = $widget->getContainerEntity();
 
 $options = eligo_get_display_entities_options($widget);
 
 $options['annotation_names'] = array('likes');
 
-if (elgg_instanceof($container, 'user') && $widget->my_likes !== 0) {
+if (elgg_instanceof($container, 'user') && $widget->my_likes !== "0") {
   $options['annotation_owner_guids'] = $container->guid;
 }
 

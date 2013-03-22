@@ -127,4 +127,32 @@ function liked_content_owner_block($hook, $type, $return, $params) {
   return $return;
 }
 
+
+function liked_content_set_defaults($widget) {
+  if ($widget->defaults_set == 1) {
+	return;
+  }
+  
+  $widget->eligo_sortby = 'mostliked';
+  $widget->eligo_sortby_dir = 'desc';
+  
+  // set defaults depending on what kind of widget it is
+  $container = $widget->getContainerEntity();
+  
+  if (!elgg_instanceof($container, 'group')) {
+	// profile/dashboard/index
+	$widget->eligo_owners = 'all';
+  }
+  else {
+	// groups
+	$widget->eligo_owners = 'thisgroup';
+  }
+  
+  if (elgg_instanceof($container, 'user')) {
+	$widget->my_likes = 0;
+  }
+  
+  $widget->defaults_set = 1;
+}
+
 elgg_register_event_handler('init', 'system', 'liked_content_init');

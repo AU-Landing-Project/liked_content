@@ -1,5 +1,7 @@
 <?php
 $widget = $vars['entity'];
+liked_content_set_defaults($widget);
+
 $container = $widget->getContainerEntity();
 
 
@@ -15,7 +17,7 @@ $options = array(
 	'value' => 1
 );
 
-if ($widget->my_likes !== 0) {
+if ($widget->my_likes !== "0") {
   $options['checked'] = 'checked';
 }
 
