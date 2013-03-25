@@ -2,9 +2,10 @@
 
 x.x (mm/dd/yyyy):
 
-1.2 (03/22/2013):
+1.2 (03/25/2013):
  - adds sensible defaults for widgets in various contexts
  - fixes 'my liked' option bug due to strict check for int(0) when it's actually a string
+ - adds number of likes to entity menu in liked_widget
 
 1.1 (03/18/2013):
  - adds language string letting users know there is no liked content

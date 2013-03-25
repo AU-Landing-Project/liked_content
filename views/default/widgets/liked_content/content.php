@@ -29,7 +29,10 @@ if ($widget->eligo_sortby == 'mostliked') {
   }
 }
 
+$context = elgg_get_context();
+elgg_set_context('liked_content_widget');
 $content = elgg_list_entities_from_annotations($options);
+elgg_set_context($context);
 
 
 if ($content) {

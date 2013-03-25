@@ -3,6 +3,7 @@
 function liked_content_init() {
   
   elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'liked_content_owner_block');
+  elgg_register_plugin_hook_handler('register', 'menu:entity', 'liked_content_entity_menu', 1000);
   elgg_register_page_handler('liked_content', 'liked_content_page_handler');
   
   if (elgg_is_active_plugin('au_widgets_framework')) {
@@ -153,6 +154,21 @@ function liked_content_set_defaults($widget) {
   }
   
   $widget->defaults_set = 1;
+}
+
+
+function liked_content_entity_menu($hook, $type, $return, $params) {
+  if (elgg_get_context() != 'liked_content_widget') {
+	return $return;
+  }
+  
+  foreach ($return as $key => $item) {
+	if ($item->getName() != 'likes_count') {
+	  unset($return[$key]);
+	}
+  }
+  
+  return $return;
 }
 
 elgg_register_event_handler('init', 'system', 'liked_content_init');
