@@ -106,8 +106,35 @@ function liked_content_page_handler($page) {
 	  return true;
 	  
 	  break;
-  }
-  
+	// provide page showing all visible likes
+  	case 'all':
+	  elgg_push_breadcrumb(elgg_echo('liked_content:liked_content'));
+	  
+	  $options = array(
+		'annotation_names' => array('likes'),
+		'selects' => array("(SELECT count(distinct l.id) FROM {$dbprefix}annotations l WHERE l.name_id = $likes_metastring AND l.entity_guid = e.guid) AS likes"),
+		'order_by' => 'likes DESC',
+		'full_view' => false
+	  );
+	  
+	  $content = elgg_list_entities_from_annotations($options);
+	  if (!$content) {
+		$content = elgg_echo('liked_content:noresults');
+	  }
+	  
+	  $title = elgg_echo('liked_content:group:most_liked');
+	  
+	  $layout = elgg_view_layout('content', array(
+		  'title' => elgg_view_title($title),
+		  'content' => $content,
+		  'filter' => false,
+	  ));
+	  
+	  echo elgg_view_page($title, $layout);
+	  return true;
+	  
+	  break;
+   }
   return false;
 }
 
