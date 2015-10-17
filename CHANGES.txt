@@ -2,6 +2,11 @@
 
 x.x (mm/dd/yyyy):
 
+2.0.0 ():
+ - Elgg 1.9+ upgrade
+ - Added "All" option for sitewide list
+ - Added site menu item to link to above sitewide list
+
 1.2 (03/25/2013):
  - adds sensible defaults for widgets in various contexts
  - fixes 'my liked' option bug due to strict check for int(0) when it's actually a string

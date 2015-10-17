@@ -1,4 +1,4 @@
-liked_content
+Liked Content
 =============
 
 Display liked content for users and groups in elgg
