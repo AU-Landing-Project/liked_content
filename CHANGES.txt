@@ -2,7 +2,7 @@
 
 x.x (mm/dd/yyyy):
 
-2.0.0 ():
+2.0.0 (10/17/2015):
  - Elgg 1.9+ upgrade
  - Added "All" option for sitewide list
  - Added site menu item to link to above sitewide list
